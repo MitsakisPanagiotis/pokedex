@@ -1,0 +1,23 @@
+{% extends './base.html' %}
+
+{% block title %} About{% endblock title %}
+
+{% block content %}
+    <div class="about-content">
+        <img src="{{ MEDIA_URL }}{{ pokemon.artwork }}"
+             alt="{{ pokemon.name }}.png" />
+        <div class="p-container">
+            <p>
+                Pokédex is a personal project of mine. I started it because I like Pokémon very much
+                and it helped me to better understand Django. I worked with a sample of the first
+                three generations of Pokémon. All data were drawn from <a rel="noopener noreferrer" href="https://pokeapi.co" target="_blank">pokeapi</a>.
+            </p>
+            <p>
+                It's not a flashy web app as others. The colour palette is strict with the colours of
+                each type, the colours of each stat, and white wherever I could not avoid it.
+                The technologies used are Django, Python, HTML, CSS, and Javascript. Search functionality
+                was accomplished with Algolia.
+            </p>
+        </div>
+    </div>
+{% endblock content %}

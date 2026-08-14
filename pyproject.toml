@@ -1,0 +1,31 @@
+[tool.djlint]
+	blank_line_after_tag = "load,extends"
+	format_attribute_template_tags = true
+	format_css = false
+	format_js = false
+	ignore_case = false
+	max_blank_lines = 1
+	max_line_length = 120
+	preserve_blank_lines = false
+	profile = "django"
+
+[tool.ruff]
+	exclude = [".git", ".pyenv", ".pytest_cache", ".ruff_cache", ".venv", "node_modules"]
+	indent-width = 4
+	line-length = 100
+	target-version = "py314"
+
+[tool.ruff.lint]
+	dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+	fixable = ["ALL"]
+	ignore = []
+	select = ["E4", "E7", "E9", "F", "I"]
+	unfixable = []
+
+[tool.ruff.format]
+	docstring-code-format = true
+	docstring-code-line-length = "dynamic"
+	indent-style = "space"
+	line-ending = "auto"
+	quote-style = "double"
+	skip-magic-trailing-comma = false

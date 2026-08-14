@@ -1,0 +1,57 @@
+@import url('main.css');
+
+.grid-wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-area: main;
+}
+
+#filters {
+	position: sticky;
+	top: 0;
+	height: 20px;
+	padding: 15px;
+	background-color: var(--normal);
+}
+
+#filters select {
+	border: none;
+}
+
+.list-wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+	padding: 20px;
+	gap: 10px;
+}
+
+.card-container {
+	width: fit-content;
+}
+
+.list-wrapper article {
+	width: 150px;
+	padding: 16px;
+	border-radius: 12px;
+	background-color: var(--special-defense);
+	box-shadow: 0 4px 10px #00000014;
+	text-align: center;
+}
+
+.list-wrapper h4 {
+	margin: 2px 0;
+}
+
+.list-wrapper img {
+	width: 100px;
+	height: 110px;
+}
+
+.list-wrapper a {
+	color: var(--dark);
+	text-decoration: none;
+}
+
+.list-wrapper article:hover {
+	transform: translateY(-5px);
+}

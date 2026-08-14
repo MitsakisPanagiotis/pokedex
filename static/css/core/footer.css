@@ -1,0 +1,9 @@
+@import url('main.css');
+
+.footer {
+	grid-area: footer;
+	width: 100%;
+	background-color: var(--fire);
+	color: var(--dark);
+	text-align: center;
+}

@@ -1,0 +1,15 @@
+{% extends './base.html' %}
+
+{% block content %}
+    <div class="main-content">
+        <main>
+            <h1 class="header">POKéDEX</h1>
+            <search id="search">
+                <label for="search-input">Search for Pokémon</label>
+                <input id="search-input" name="query" type="search" />
+            </search>
+            <ul class="search-results hide" id="results">
+            </ul>
+        </main>
+    </div>
+{% endblock content %}

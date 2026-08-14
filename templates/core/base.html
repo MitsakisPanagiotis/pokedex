@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="el">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pokédex |{% block title %} Home{% endblock title %}</title>
+        <meta name="description" content="Get information about Pokémon." />
+        <link rel="canonical" href="https://pokedex-app.com" />
+        <link type="image/x-icon"
+              rel="shortcut icon"
+              href="{% static 'favicon.ico' %}" />
+        <link type="image/x-icon"
+              rel="shortcut icon"
+              href="{% static 'apple-touch-icon.png' %}"
+              sizes="180x180" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect"
+              href="https://fonts.gstatic.com"
+              crossorigin="anonymous" />
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" />
+        <link rel="stylesheet" href="{% static 'css/core/main.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/core/footer.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/core/nav-bar.css' %}" />
+        {% if request.resolver_match.url_name == 'pokemon_list' %}
+            <link rel="stylesheet" href="{% static 'css/core/list.css' %}" />
+        {% endif %}
+        {% if request.resolver_match.url_name == 'pokemon_details' %}
+            <link rel="stylesheet" href="{% static 'css/core/details.css' %}" />
+        {% endif %}
+        {% if request.resolver_match.url_name == 'ability_details' %}
+            <link rel="stylesheet" href="{% static 'css/core/ability_details.css' %}" />
+        {% endif %}
+        {% if request.resolver_match.url_name == 'about' %}
+            <link rel="stylesheet" href="{% static 'css/core/about.css' %}" />
+        {% endif %}
+    </head>
+    <body>
+        {% include './components/nav-bar.html' %}
+        {% block content %}
+        {% endblock content %}
+        {% include './components/footer.html' %}
+    </body>
+    {% if request.resolver_match.url_name == 'home' %}
+        <script src="{% static 'js/core/search.js' %}" type="module"></script>
+    {% endif %}
+    {% if request.resolver_match.url_name == 'pokemon_details' %}
+        <script src="{% static 'js/core/details.js' %}"></script>
+    {% endif %}
+    {% if request.resolver_match.url_name == 'pokemon_list' %}
+        <script src="{% static 'js/core/filters.js' %}"></script>
+    {% endif %}
+</html>

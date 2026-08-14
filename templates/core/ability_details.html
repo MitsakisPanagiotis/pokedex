@@ -1,0 +1,28 @@
+{% extends './base.html' %}
+
+{% block title %} Ability{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{ ability.name }}</h1>
+        <p>This ability was introduced in {{ ability.generation.name }}.</p>
+        <div class="effect">
+            <h2>Effect</h2>
+            <p>{{ ability.effect }}</p>
+        </div>
+        <div class="description">
+            <h2>Description</h2>
+            <p>{{ ability.description }}</p>
+        </div>
+        <div class="pokemon">
+            <p>The following Pokémon have this ability:</p>
+            <ul>
+                {% for p in pokemon %}
+                    <li>
+                        <a href="{% url 'pokemon_details' p.pokemon.slug %}">{{ p.pokemon.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock content %}

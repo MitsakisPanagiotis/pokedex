@@ -1,0 +1,6 @@
+.env
+.ruff_cache
+.venv
+core/**/__pycache__
+node_modules
+pokedex/**/__pycache__

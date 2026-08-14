@@ -1,0 +1,26 @@
+@import url('main.css');
+
+body {
+	color: var(--dark);
+}
+
+h1 {
+	text-align: center;
+}
+
+.container {
+	display: flex;
+	row-gap: 20px;
+	grid-area: main;
+	flex-direction: column;
+	padding: 20px;
+}
+
+.pokemon ul {
+	list-style: none;
+}
+
+.pokemon a {
+	color: var(--dark);
+	text-decoration: none;
+}

@@ -1,0 +1,20 @@
+{
+	"allowScripts": {
+		"djlint": true
+	},
+	"devDependencies": {
+		"djlint": "^1.44.2",
+		"htmlhint": "^1.9.2",
+		"prettier": "^3.9.6",
+		"prettier-plugin-css-order": "^2.2.0",
+		"prettier-plugin-toml": "^2.0.6"
+	},
+	"scripts": {
+		"djlint": "djlint templates/**/* --reformat",
+		"djlint:linter": "djlint templates/**/*",
+		"htmlhint": "npx htmlhint \"**/*.html\"",
+		"linter": "ruff check --fix",
+		"prettier": "npx prettier . -w",
+		"ruff": "ruff format"
+	}
+}

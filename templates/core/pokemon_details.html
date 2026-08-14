@@ -1,0 +1,86 @@
+{% extends './base.html' %}
+
+{% load static %}
+
+{% block title %} Details{% endblock title %}
+
+{% block content %}
+    <div class="details-container">
+        <section class="hero">
+            <img id="artwork-img"
+                 src="{{ MEDIA_URL }}{{ pokemon.artwork }}"
+                 alt="{{ pokemon.name }}.png" />
+            <h1>No. {{ pokemon.id }} {{ pokemon.name }}</h1>
+            <!-- htmlhint-disable attr-value-no-duplication -->
+            <div class="type-container">
+                <span class="type {# djlint:off #}{% if pokemon.type_1.name == 'Bug' %}bug{% elif pokemon.type_1.name == 'Dark' %}dark{% elif pokemon.type_1.name == 'Dragon' %}dragon{% elif pokemon.type_1.name == 'Electric' %}electric{% elif pokemon.type_1.name == 'Fairy' %}fairy{% elif pokemon.type_1.name == 'Fighting' %}fighting{% elif pokemon.type_1.name == 'Fire' %}fire{% elif pokemon.type_1.name == 'Flying' %}flying{% elif pokemon.type_1.name == 'Ghost' %}ghost{% elif pokemon.type_1.name == 'Grass' %}grass{% elif pokemon.type_1.name == 'Ground' %}ground{% elif pokemon.type_1.name == 'Ice' %}ice{% elif pokemon.type_1.name == 'Normal' %}normal{% elif pokemon.type_1.name == 'Poison' %}poison{% elif pokemon.type_1.name == 'Psychic' %}psychic{% elif pokemon.type_1.name == 'Rock' %}rock{% elif pokemon.type_1.name == 'Steel' %}steel{% else %}water{% endif %}{# djlint:on #}">{% if pokemon.type_1.name == 'Bug' %}<img src="{% static 'icons/types/bug.svg' %}" alt="bug.svg" />{% elif pokemon.type_1.name == 'Dark' %}<img src="{% static 'icons/types/dark.svg' %}" alt="dark.svg" />{% elif pokemon.type_1.name == 'Dragon' %}<img src="{% static 'icons/types/dragon.svg' %}" alt="dragon.svg" />{% elif pokemon.type_1.name == 'Electric' %}<img src="{% static 'icons/types/electric.svg' %}" alt="electric.svg" />{% elif pokemon.type_1.name == 'Fairy' %}<img src="{% static 'icons/types/fairy.svg' %}" alt="fairy.svg" />{% elif pokemon.type_1.name == 'Fighting' %}<img src="{% static 'icons/types/fighting.svg' %}" alt="fighting.svg" />{% elif pokemon.type_1.name == 'Fire' %}<img src="{% static 'icons/types/fire.svg' %}" alt="fire.svg" />{% elif pokemon.type_1.name == 'Flying' %}<img src="{% static 'icons/types/flying.svg' %}" alt="flying.svg" />{% elif pokemon.type_1.name == 'Ghost' %}<img src="{% static 'icons/types/ghost.svg' %}" alt="ghost.svg" />{% elif pokemon.type_1.name == 'Grass' %}<img src="{% static 'icons/types/grass.svg' %}" alt="grass.svg" />{% elif pokemon.type_1.name == 'Ground' %}<img src="{% static 'icons/types/ground.svg' %}" alt="ground.svg" />{% elif pokemon.type_1.name == 'Ice' %}<img src="{% static 'icons/types/ice.svg' %}" alt="ice.svg" />{% elif pokemon.type_1.name == 'Normal' %}<img src="{% static 'icons/types/normal.svg' %}" alt="normal.svg" />{% elif pokemon.type_1.name == 'Poison' %}<img src="{% static 'icons/types/poison.svg' %}" alt="poison.svg" />{% elif pokemon.type_1.name == 'Psychic' %}<img src="{% static 'icons/types/psychic.svg' %}" alt="psychic.svg" />{% elif pokemon.type_1.name == 'Rock' %}<img src="{% static 'icons/types/rock.svg' %}" alt="rock.svg" />{% elif pokemon.type_1.name == 'Steel' %}<img src="{% static 'icons/types/steel.svg' %}" alt="steel.svg" />{% else %}<img src="{% static 'icons/types/water.svg' %}" alt="water.svg" />{% endif %} {{ pokemon.type_1 }}</span>
+                {% if pokemon.type_2 %}
+                    <span class="type {# djlint:off #}{% if pokemon.type_2.name == 'Bug' %}bug{% elif pokemon.type_2.name == 'Dark' %}dark{% elif pokemon.type_2.name == 'Dragon' %}dragon{% elif pokemon.type_2.name == 'Electric' %}electric{% elif pokemon.type_2.name == 'Fairy' %}fairy{% elif pokemon.type_2.name == 'Fighting' %}fighting{% elif pokemon.type_2.name == 'Fire' %}fire{% elif pokemon.type_2.name == 'Flying' %}flying{% elif pokemon.type_2.name == 'Ghost' %}ghost{% elif pokemon.type_2.name == 'Grass' %}grass{% elif pokemon.type_2.name == 'Ground' %}ground{% elif pokemon.type_2.name == 'Ice' %}ice{% elif pokemon.type_2.name == 'Normal' %}normal{% elif pokemon.type_2.name == 'Poison' %}poison{% elif pokemon.type_2.name == 'Psychic' %}psychic{% elif pokemon.type_2.name == 'Rock' %}rock{% elif pokemon.type_2.name == 'Steel' %}steel{% else %}water{% endif %}{# djlint:on #}">{% if pokemon.type_2.name == 'Bug' %}<img src="{% static 'icons/types/bug.svg' %}" alt="bug.svg" />{% elif pokemon.type_2.name == 'Dark' %}<img src="{% static 'icons/types/dark.svg' %}" alt="dark.svg" />{% elif pokemon.type_2.name == 'Dragon' %}<img src="{% static 'icons/types/dragon.svg' %}" alt="dragon.svg" />{% elif pokemon.type_2.name == 'Electric' %}<img src="{% static 'icons/types/electric.svg' %}" alt="electric.svg" />{% elif pokemon.type_2.name == 'Fairy' %}<img src="{% static 'icons/types/fairy.svg' %}" alt="fairy.svg" />{% elif pokemon.type_2.name == 'Fighting' %}<img src="{% static 'icons/types/fighting.svg' %}" alt="fighting.svg" />{% elif pokemon.type_2.name == 'Fire' %}<img src="{% static 'icons/types/fire.svg' %}" alt="fire.svg" />{% elif pokemon.type_2.name == 'Flying' %}<img src="{% static 'icons/types/flying.svg' %}" alt="flying.svg" />{% elif pokemon.type_2.name == 'Ghost' %}<img src="{% static 'icons/types/ghost.svg' %}" alt="ghost.svg" />{% elif pokemon.type_2.name == 'Grass' %}<img src="{% static 'icons/types/grass.svg' %}" alt="grass.svg" />{% elif pokemon.type_2.name == 'Ground' %}<img src="{% static 'icons/types/ground.svg' %}" alt="ground.svg" />{% elif pokemon.type_2.name == 'Ice' %}<img src="{% static 'icons/types/ice.svg' %}" alt="ice.svg" />{% elif pokemon.type_2.name == 'Normal' %}<img src="{% static 'icons/types/normal.svg' %}" alt="normal.svg" />{% elif pokemon.type_2.name == 'Poison' %}<img src="{% static 'icons/types/poison.svg' %}" alt="poison.svg" />{% elif pokemon.type_2.name == 'Psychic' %}<img src="{% static 'icons/types/psychic.svg' %}" alt="psychic.svg" />{% elif pokemon.type_2.name == 'Rock' %}<img src="{% static 'icons/types/rock.svg' %}" alt="rock.svg" />{% elif pokemon.type_2.name == 'Steel' %}<img src="{% static 'icons/types/steel.svg' %}" alt="steel.svg" />{% else %}<img src="{% static 'icons/types/water.svg' %}" alt="water.svg" />{% endif %} {{ pokemon.type_2 }}</span>
+                {% endif %}
+            </div>
+            <!-- htmlhint-enable -->
+        </section>
+        <section class="identity">
+            <p>Species: {{ pokemon.species.name }}</p>
+            <p>Generation: {{ pokemon.generation }}</p>
+            <p id="height">Height: {{ pokemon.height }}m</p>
+            <p id="weight">Weight: {{ pokemon.weight }}kg</p>
+            <p>Mythical: {% if pokemon.mythical %}Yes{% else %}No{% endif %}</p>
+            <p>Legendary: {% if pokemon.legendary %}Yes{% else %}No{% endif %}</p>
+            <p>{{ pokemon.description }}</p>
+        </section>
+        <section class="battle">
+            <div id="stats">
+                <h2>Stats</h2>
+                <ul>
+                    <li><span class="hp stats-text">HP</span> <span class="hp stats-number">{{ pokemon.hp }}</span></li>
+                    <li><span class="attack stats-text">ATTACK</span> <span class="attack stats-number">{{ pokemon.attack }}</span></li>
+                    <li><span class="defense stats-text">DEFENSE</span> <span class="defense stats-number">{{ pokemon.defense }}</span></li>
+                    <li><span class="sp-attack stats-text">SPECIAL ATTACK</span> <span class="sp-attack stats-number">{{ pokemon.special_attack }}</span></li>
+                    <li><span class="sp-defense stats-text">SPECIAL DEFENSE</span> <span class="sp-defense stats-number">{{ pokemon.special_defense }}</span></li>
+                    <li><span class="speed stats-text">SPEED</span> <span class="speed stats-number">{{ pokemon.speed }}</span></li>
+                </ul>
+            </div>
+            <div id="abilities">
+                <h2>Abilities</h2>
+                <ul>
+                    {% for ability in abilities %}
+                        <li class="text">
+                            <details>
+                                <summary>{{ ability.ability.name }} {% if ability.is_hidden %}(Hidden){% endif %}</summary>
+                                <a href="{% url 'ability_details' ability.ability.slug %}">View details</a>
+                                <p>{{ ability.ability.description }}</p>
+                            </details>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div id="moves">
+                <h2>Moves</h2>
+                <ul>
+                    {% for move in pokemon.moves.all %}
+                        <li class="text">
+                            <details>
+                                <summary>{{ move.name }}</summary>
+                                <a href="{% url 'move_details' move.slug %}">View details</a>
+                                <p>{{ move.description }}</p>
+                            </details>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        <section class="habitat">
+            <p class="text">This Pokémon can be found at the following areas:</p>
+            <ul>
+                {% for area in pokemon.areas.all %}
+                    <li class="text">
+                        <a href="{% url 'area_details' area.slug %}">{{ area.name }}</a>
+                    </li>
+                {% empty %}
+                    <p class="text">None</p>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+{% endblock content %}

@@ -1,0 +1,79 @@
+{% extends './base.html' %}
+
+{% block title %} List{% endblock title %}
+{% block content %}
+    <div class="grid-wrapper">
+        <form id="filters" method="post">
+            <label for="generation">Select a generation:</label>
+            <select id="generation" name="generations">
+                <option value="all" selected="selected">All</option>
+                <option value="Generation I">Generation I</option>
+                <option value="Generation II">Generation II</option>
+                <option value="Generation III">Generation III</option>
+            </select>
+            <label for="type-1">Select first type:</label>
+            <select id="type-1" name="types">
+                <option value="all" selected="selected">All</option>
+                <option value="Bug">Bug</option>
+                <option value="Dark">Dark</option>
+                <option value="Dragon">Dragon</option>
+                <option value="Electric">Electric</option>
+                <option value="Fairy">Fairy</option>
+                <option value="Fighting">Fighting</option>
+                <option value="Fire">Fire</option>
+                <option value="Flying">Flying</option>
+                <option value="Ghost">Ghost</option>
+                <option value="Grass">Grass</option>
+                <option value="Ground">Ground</option>
+                <option value="Ice">Ice</option>
+                <option value="Normal">Normal</option>
+                <option value="Poison">Poison</option>
+                <option value="Psychic">Psychic</option>
+                <option value="Rock">Rock</option>
+                <option value="Steel">Steel</option>
+                <option value="Water">Water</option>
+            </select>
+            <label for="type-2">Select second type:</label>
+            <select id="type-2" name="types-2">
+                <option value="all" selected="selected">All</option>
+                <option value="Bug">Bug</option>
+                <option value="Dark">Dark</option>
+                <option value="Dragon">Dragon</option>
+                <option value="Electric">Electric</option>
+                <option value="Fairy">Fairy</option>
+                <option value="Fighting">Fighting</option>
+                <option value="Fire">Fire</option>
+                <option value="Flying">Flying</option>
+                <option value="Ghost">Ghost</option>
+                <option value="Grass">Grass</option>
+                <option value="Ground">Ground</option>
+                <option value="Ice">Ice</option>
+                <option value="Normal">Normal</option>
+                <option value="Poison">Poison</option>
+                <option value="Psychic">Psychic</option>
+                <option value="Rock">Rock</option>
+                <option value="Steel">Steel</option>
+                <option value="Water">Water</option>
+            </select>
+        </form>
+        <div class="list-wrapper">
+            {% for pokemon in pokemon_list %}
+                <div class="card-container"
+                     data-generation="{{ pokemon.generation.name }}"
+                     data-type1="{{ pokemon.type_1 }}"
+                     data-type2="{{ pokemon.type_2 }}">
+                    <a href="{% url 'pokemon_details' pokemon.slug %}">
+                        <article>
+                            <img src="{{ MEDIA_URL }}{{ pokemon.sprite }}"
+                                 alt="{{ pokemon.name }}.png"
+                                 loading="lazy" />
+                            <header>
+                                <h4>{{ pokemon.name }}</h4>
+                            </header>
+                        </article>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

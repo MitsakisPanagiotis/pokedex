@@ -1,0 +1,229 @@
+@import url('main.css');
+
+body {
+	background-color: #fff;
+	color: var(--dark);
+}
+
+.details-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-areas: 'hero identity' 'battle battle' 'habitat habitat';
+	grid-area: main;
+	margin-top: 50px;
+}
+
+.hero {
+	display: inherit;
+	grid-template-rows: auto;
+	grid-template-columns: 350px 1fr;
+	grid-template-areas: 'img header' 'img types';
+	grid-area: hero;
+	padding: 20px;
+}
+
+#artwork-img {
+	grid-area: img;
+	width: 300px;
+}
+
+.hero > h1 {
+	grid-area: header;
+	height: fit-content;
+}
+
+.type-container {
+	display: flex;
+	column-gap: 5px;
+	grid-area: types;
+	height: fit-content;
+	text-align: center;
+}
+
+.type {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 57px;
+	padding-right: 20px;
+	padding-left: 15px;
+	border-radius: 12px;
+	color: #000;
+	font-weight: 500;
+	font-size: large;
+}
+
+.type img {
+	width: 30px;
+}
+
+.identity {
+	display: inherit;
+	grid-template-rows: repeat(5, 30px);
+	grid-area: identity;
+	padding: 20px;
+}
+
+.identity > p {
+	height: fit-content;
+	font-weight: 500;
+	font-size: large;
+}
+
+.battle {
+	display: inherit;
+	grid-template-columns: repeat(3, 350px);
+	grid-area: battle;
+	justify-content: center;
+	padding: 20px;
+}
+
+.battle h2 {
+	text-align: center;
+}
+
+.battle ul {
+	list-style-type: none;
+}
+
+.hp {
+	color: var(--hp);
+}
+
+.attack {
+	color: var(--attack);
+}
+
+.defense {
+	color: var(--defense);
+}
+
+.sp-attack {
+	color: var(--special-attack);
+}
+
+.sp-defense {
+	color: var(--special-defense);
+}
+
+.speed {
+	color: var(--speed);
+}
+
+.stats-text {
+	font-weight: 500;
+	font-size: large;
+}
+
+.stats-text::after {
+	content: ':';
+	color: var(--dark);
+}
+
+.stats-number {
+	font-weight: 500;
+	font-size: large;
+}
+
+#abilities a {
+	color: var(--dragon);
+	text-decoration: none;
+}
+
+#moves {
+	height: 350px;
+	overflow: auto;
+}
+
+.habitat {
+	display: inherit;
+	grid-area: habitat;
+	padding: 20px;
+}
+
+.habitat ul {
+	list-style-type: none;
+}
+
+.text {
+	font-weight: 500;
+	font-size: large;
+}
+
+.bug {
+	background-color: var(--bug);
+}
+
+.dark {
+	background-color: var(--dark);
+}
+
+.dragon {
+	background-color: var(--dragon);
+}
+
+.electric {
+	background-color: var(--electric);
+}
+
+.fairy {
+	background-color: var(--fairy);
+}
+
+.fighting {
+	background-color: var(--fighting);
+}
+
+.fire {
+	background-color: var(--fire);
+}
+
+.flying {
+	background-color: var(--flying);
+}
+
+.ghost {
+	background-color: var(--ghost);
+}
+
+.grass {
+	background-color: var(--grass);
+}
+
+.ground {
+	background-color: var(--ground);
+}
+
+.ice {
+	background-color: var(--ice);
+}
+
+.normal {
+	background-color: var(--normal);
+}
+
+.poison {
+	background-color: var(--poison);
+}
+
+.psychic {
+	background-color: var(--psychic);
+}
+
+.rock {
+	background-color: var(--rock);
+}
+
+.steel {
+	background-color: var(--steel);
+}
+
+.water {
+	background-color: var(--water);
+}
+
+a {
+	color: var(--dark);
+	text-decoration: none;
+}

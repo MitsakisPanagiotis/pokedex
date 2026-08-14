@@ -1,0 +1,25 @@
+@import url('main.css');
+
+.menu {
+	display: flex;
+	grid-area: nav-bar;
+	flex-direction: column;
+	background-color: var(--fire);
+	color: var(--dark);
+}
+
+.menu > menu {
+	display: flex;
+	column-gap: 20px;
+	justify-content: end;
+	margin-right: 15px;
+}
+
+menu > li {
+	list-style-type: none;
+}
+
+menu > li > a {
+	color: var(--dark);
+	text-decoration: none;
+}

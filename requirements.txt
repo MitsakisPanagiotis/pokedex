@@ -1,0 +1,7 @@
+algoliasearch==4.44.4
+django>=6.1.0,<7.0
+mysqlclient==2.2.8
+pillow==12.3.0
+python-dotenv==1.2.2
+requests==2.34.2
+ruff>=0.16.3

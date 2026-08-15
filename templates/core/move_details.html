@@ -7,9 +7,9 @@
         <h1>{{ move.name }}</h1>
         <div class="description">
             <h2>Description</h2>
-            <p>{{ move.description }}</p>
+            <p class="font-size">{{ move.description }}</p>
         </div>
-        <div class="misc">
+        <div class="misc font-size">
             <p>Type: {{ move.type.name }}</p>
             <p>Generation: {{ move.generation.name }}</p>
             <p>Accuracy: {{ move.accuracy }}</p>
@@ -19,7 +19,7 @@
             <p>Effect chance: {% if move.effect_chance %}{{ move.effect_chance }}{% else %}0{% endif %}%</p>
             <p>Damage class: {{ move.damage_class.name }}</p>
         </div>
-        <div class="pokemon">
+        <div class="pokemon font-size">
             <p>The following Pokémon can learn this move:</p>
             <ul>
                 {% for p in pokemon %}

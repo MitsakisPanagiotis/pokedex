@@ -2,14 +2,14 @@
 
 .about-content {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(475px, 1fr));
+	grid-template-columns: 475px 1fr;
 	grid-area: main;
 	align-content: center;
 }
 
 .p-container {
 	color: var(--dark);
-	font-size: 1.1rem;
+	font-size: var(--font-size);
 }
 
 a {

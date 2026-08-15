@@ -74,8 +74,11 @@ class AboutView(View):
     template_name = "about.html"
 
     def get(self, request):
+        upper_bound = len(Pokemon.objects.all())
         return render(
-            request, self.template_name, {"pokemon": Pokemon.objects.get(id=random.randint(1, 386))}
+            request,
+            self.template_name,
+            {"pokemon": Pokemon.objects.get(id=random.randint(1, upper_bound))},
         )
 
 

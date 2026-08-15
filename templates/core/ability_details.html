@@ -5,16 +5,16 @@
 {% block content %}
     <div class="container">
         <h1>{{ ability.name }}</h1>
-        <p>This ability was introduced in {{ ability.generation.name }}.</p>
+        <p class="font-size">This ability was introduced in {{ ability.generation.name }}.</p>
         <div class="effect">
             <h2>Effect</h2>
-            <p>{{ ability.effect }}</p>
+            <p class="font-size">{{ ability.effect }}</p>
         </div>
         <div class="description">
             <h2>Description</h2>
-            <p>{{ ability.description }}</p>
+            <p class="font-size">{{ ability.description }}</p>
         </div>
-        <div class="pokemon">
+        <div class="pokemon font-size">
             <p>The following Pokémon have this ability:</p>
             <ul>
                 {% for p in pokemon %}

@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.views import View, generic
 
-from .models import Ability, Area, Move, Pokemon, PokemonAbility
+from .models import Ability, Area, Move, Pokemon, PokemonAbility, PokemonMove
 
 
 class HomeView(View):
@@ -25,7 +25,6 @@ class PokemonListView(generic.list.ListView):
 
 
 class PokemonDetailsView(generic.detail.DetailView):
-    context_object_name = "pokemon"
     model = Pokemon
     template_name = "pokemon_details.html"
 
@@ -39,7 +38,6 @@ class PokemonDetailsView(generic.detail.DetailView):
 
 
 class AbilityDetailsView(generic.detail.DetailView):
-    context_object_name = "ability"
     model = Ability
     template_name = "ability_details.html"
 
@@ -53,12 +51,14 @@ class AbilityDetailsView(generic.detail.DetailView):
 
 
 class MoveDetailsView(generic.detail.DetailView):
-    context_object_name = "move"
     model = Move
     template_name = "move_details.html"
 
     def get_context_data(self, **kwargs):
-        return super().get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
+        move = context["move"]
+        context["pokemon"] = PokemonMove.objects.select_related("pokemon").filter(move=move)
+        return context
 
 
 class AreaDetailsView(generic.detail.DetailView):

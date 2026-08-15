@@ -1,0 +1,43 @@
+@import url('main.css');
+
+body {
+	background-color: #fff;
+	color: var(--dark);
+}
+
+.container {
+	display: inherit;
+	grid-template-columns: 1fr;
+	grid-template-areas: 'header ' 'description ' 'misc' 'pokemon-list';
+	grid-area: main;
+	padding: 20px;
+}
+
+.container h1 {
+	grid-area: header;
+	text-align: center;
+}
+
+.description {
+	grid-area: description;
+}
+
+.misc {
+	display: flex;
+	column-gap: 30px;
+	grid-area: misc;
+	flex-direction: row;
+}
+
+.pokemon {
+	grid-area: pokemon-list;
+}
+
+.pokemon ul {
+	list-style: none;
+}
+
+.pokemon a {
+	color: var(--dark);
+	text-decoration: none;
+}

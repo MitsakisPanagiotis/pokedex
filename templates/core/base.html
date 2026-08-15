@@ -33,6 +33,9 @@
         {% if request.resolver_match.url_name == 'ability_details' %}
             <link rel="stylesheet" href="{% static 'css/core/ability_details.css' %}" />
         {% endif %}
+        {% if request.resolver_match.url_name == 'move_details' %}
+            <link rel="stylesheet" href="{% static 'css/core/move_details.css' %}" />
+        {% endif %}
         {% if request.resolver_match.url_name == 'about' %}
             <link rel="stylesheet" href="{% static 'css/core/about.css' %}" />
         {% endif %}

@@ -126,14 +126,14 @@ body {
 	font-size: var(--font-size);
 }
 
-#abilities a {
-	color: var(--dragon);
-	text-decoration: none;
-}
-
-#moves {
+#moves ul {
 	height: 350px;
 	overflow: auto;
+}
+
+.link {
+	color: var(--dragon);
+	text-decoration: none;
 }
 
 .habitat {

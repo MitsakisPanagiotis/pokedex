@@ -48,7 +48,7 @@
                         <li class="text">
                             <details>
                                 <summary>{{ ability.ability.name }} {% if ability.is_hidden %}(Hidden){% endif %}</summary>
-                                <a href="{% url 'ability_details' ability.ability.slug %}">View details</a>
+                                <a class="link" href="{% url 'ability_details' ability.ability.slug %}">View details</a>
                                 <p>{{ ability.ability.description }}</p>
                             </details>
                         </li>
@@ -62,7 +62,7 @@
                         <li class="text">
                             <details>
                                 <summary>{{ move.name }}</summary>
-                                <a href="{% url 'move_details' move.slug %}">View details</a>
+                                <a class="link" href="{% url 'move_details' move.slug %}">View details</a>
                                 <p>{{ move.description }}</p>
                             </details>
                         </li>

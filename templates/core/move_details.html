@@ -1,3 +1,33 @@
 {% extends './base.html' %}
 
 {% block title %} Move{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{ move.name }}</h1>
+        <div class="description">
+            <h2>Description</h2>
+            <p>{{ move.description }}</p>
+        </div>
+        <div class="misc">
+            <p>Type: {{ move.type.name }}</p>
+            <p>Generation: {{ move.generation.name }}</p>
+            <p>Accuracy: {{ move.accuracy }}</p>
+            <p>Power: {{ move.power }}</p>
+            <p>PP: {{ move.pp }}</p>
+            <p>Effect: {{ move.effect.name }}</p>
+            <p>Effect chance: {% if move.effect_chance %}{{ move.effect_chance }}{% else %}0{% endif %}%</p>
+            <p>Damage class: {{ move.damage_class.name }}</p>
+        </div>
+        <div class="pokemon">
+            <p>The following Pokémon can learn this move:</p>
+            <ul>
+                {% for p in pokemon %}
+                    <li>
+                        <a href="{% url 'pokemon_details' p.pokemon.slug %}">{{ p.pokemon.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock content %}

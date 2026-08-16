@@ -28,13 +28,16 @@
             <link rel="stylesheet" href="{% static 'css/core/list.css' %}" />
         {% endif %}
         {% if request.resolver_match.url_name == 'pokemon_details' %}
-            <link rel="stylesheet" href="{% static 'css/core/details.css' %}" />
+            <link rel="stylesheet" href="{% static 'css/core/pokemon_details.css' %}" />
         {% endif %}
         {% if request.resolver_match.url_name == 'ability_details' %}
             <link rel="stylesheet" href="{% static 'css/core/ability_details.css' %}" />
         {% endif %}
         {% if request.resolver_match.url_name == 'move_details' %}
             <link rel="stylesheet" href="{% static 'css/core/move_details.css' %}" />
+        {% endif %}
+        {% if request.resolver_match.url_name == 'area_details' %}
+            <link rel="stylesheet" href="{% static 'css/core/area_details.css' %}" />
         {% endif %}
         {% if request.resolver_match.url_name == 'about' %}
             <link rel="stylesheet" href="{% static 'css/core/about.css' %}" />

@@ -2,5 +2,6 @@
 .ruff_cache
 .venv
 core/**/__pycache__
+media
 node_modules
 pokedex/**/__pycache__

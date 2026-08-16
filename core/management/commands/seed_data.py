@@ -70,8 +70,10 @@ class Command(BaseCommand):
             species_data = api.get_json(resources["species"]["url"])
             encounter_data = api.get_json(resources["location_area_encounters"])
 
-            areas = []
+            area_ids = []
             for area in encounter_data:
+                area_ids.append(int(area["location_area"]["url"].split("/")[-2]))
+
                 if not Area.objects.filter(
                     id=int(area["location_area"]["url"].split("/")[-2])
                 ).exists():
@@ -189,7 +191,6 @@ class Command(BaseCommand):
                             id=int(area_data["location"]["url"].split("/")[-2])
                         ),
                     )
-                    areas.append(Area.objects.get(id=area_data["id"]))
 
             pokemon_name = ""
             pokemon_slug = ""
@@ -521,7 +522,10 @@ class Command(BaseCommand):
                     is_hidden=resources["abilities"][j]["is_hidden"],
                 )
 
-            for area in areas:
-                Encounter.objects.create(pokemon=pokemon, area=area)
+            for id in area_ids:
+                if not Area.objects.filter(id=id).exists():
+                    continue
+
+                Encounter.objects.create(pokemon=pokemon, area=Area.objects.get(id=id))
 
         self.stdout.write(self.style.SUCCESS("Database was populated with the data."))

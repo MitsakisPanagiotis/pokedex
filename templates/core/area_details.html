@@ -1,3 +1,20 @@
 {% extends './base.html' %}
 
 {% block title %} Area{% endblock title %}
+
+{% block content %}
+    <div class="area-container">
+        <h1>{{ area.name }}</h1>
+        <p class="font-size">This area is part of {{ area.location.name }} location.</p>
+        <div class="encounters font-size">
+            <p>The following Pokémon can be encountered in this area:</p>
+            <ul>
+                {% for p in pokemon %}
+                    <li>
+                        <a href="{% url 'pokemon_details' p.pokemon.slug %}">{{ p.pokemon.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock content %}

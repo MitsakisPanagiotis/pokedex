@@ -41,7 +41,13 @@ pip install -r requirements.txt
 npm install
 ```
 
-Launch the server after you connected to the database:
+Run migrations:
+
+```
+python manage.py migrate
+```
+
+Launch the server:
 
 ```
 python manage.py runserver

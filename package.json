@@ -3,7 +3,7 @@
 		"djlint": true
 	},
 	"devDependencies": {
-		"djlint": "^1.45.0",
+		"djlint": "^1.45.2",
 		"htmlhint": "^1.9.2",
 		"prettier": "^3.9.6",
 		"prettier-plugin-css-order": "^2.2.0",
